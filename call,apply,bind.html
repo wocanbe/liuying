@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script language="javascript">
+/*call 和 apply 的功能是以不同的对象作为上下文来调用某个函数。
+简而言之，就是允许一个对象去调用另一个对象的成员函数。
+
+乍一看似乎很不可思议，而且容易引起混乱，但其实 JavaScript 并没有严格的所谓“成员函数”的概念，函数与对象的所属关系在调用时才展现出来。
+灵活使用 call 和apply 可以节省不少时间，在后面我们可以看到， call 可以用于实现对象的继承。
+call 和 apply 的功能是一致的，两者细微的差别在于 call 以参数表来接受被调用函数的参数，而 apply 以数组来接受被调用函数的参数。 
+示例：*/
+var xw = {
+	name : "小王",
+	gender : "男",
+	age : 24,
+	say : function(school,grade) {
+		console.log(this.name + " , " + this.gender + " ,今年" + this.age + " ,在" + school + "上" + grade);                                
+	}
+}
+var xh = {
+	name : "小红",
+	gender : "女",
+	age : 18
+}
+xw.say.call(xh,"实验小学","六年级");
+xw.say.apply(xh,["郑州牛皮癣医院实验小学","六年级"]);
+/*
+可以使用 bind 方法来永久地绑定函数的上下文，使其无论被谁调用，上下文都是固定的。
+但是由于bind返回的仍然是一个函数，所以我们还可以在调用的时候再进行传参。
+*/
+xw.say.bind(xh)("实验小学","五年级");
+</script>
+</head>
+<body>
+</body>
+</html>
