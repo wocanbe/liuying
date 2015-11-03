@@ -1,0 +1,6 @@
+.has_add_ly {background: url("arrow.png") no-repeat center right;}
+.lyTimer {position:absolute;width: 80px;height: 200px;border: 1px solid #789;overflow-x: hidden;padding: 0;margin: 0;display: none;}
+.lyTimer li {display: block;margin: 0;text-align: center;cursor: default;background-color: #fff;}
+.lyTimer li:hover {background-color: #cde;}
+.lyTimer li.active {background-color: #abc;}
+.lyTimer li.enable {background-color: #ccc;color:#999;}

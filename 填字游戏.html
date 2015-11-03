@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>填字游戏</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/lyPazzle.js"></script>
+<style>
+.ly_pazzle * {margin: 0;padding: 0;}
+.ly_pazzle {border-bottom: 1px solid #666;border-left: 1px solid #666;}
+.ly_pazzle ul {clear: both;border-top: 1px solid #666;height: 29px;}
+.ly_pazzle input {display: block;float: left;width: 29px;height: 29px;border:none;border-right: 1px solid #666;text-align:center;line-height: 29px;}
+.ly_pazzle input.right {background-color: #0f0;}
+.ly_pazzle input.wrong {background-color: #f00;}
+</style>
+<script language="javascript">
+var data1=[
+	{
+		"start":[4,2],
+		"end":[4,8],
+		"answer":"1234567"
+	},
+	{
+		"start":[2,5],
+		"end":[6,5],
+		"answer":"ab4cd"
+	}
+];
+var obj1;
+function showAnswer(){obj1.showAnswer();}
+function checkAnswer(){obj1.checkAnswer();}
+function refresh(){obj1.refresh();}
+function readFn(){return obj1.readFn();}
+function setFn(ans){obj1.setFn(ans);}
+function checkFn(ans){return obj1.checkFn(ans);}
+
+$(function(){
+	obj1=$('#main').lyPazzle(7,9,data1);
+})
+</script>
+</head>
+
+<body>
+<div id="main" style="width:210px;"></div>
+</body>
+</html>

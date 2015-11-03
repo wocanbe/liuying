@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/lyCalendar.js"></script>
+<link rel="stylesheet" type="text/css" href="css/lyCalendar.css">
+<style>
+body {background-color: red;}
+</style>
+<script language="javascript">
+$(function(){
+	$("#lyc_box").lyCalendar('lyCalendar.json?user=aa','test.jsp?user=aa');
+})
+</script>
+</head>
+<body>
+<div id="lyc_box" class="lyCalen"></div>
+</body>
+</html>

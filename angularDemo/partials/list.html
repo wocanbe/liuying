@@ -1,0 +1,36 @@
+<div>
+	<div>
+        Search: <input ng-model="query"/>
+        Sort by:
+        <select ng-model="orderProp">
+            <option value="sid">ID</option>
+            <option value="name">NAME</option>
+        </select>
+    </div>
+    <div>
+		<ul class="title">
+			<li>学号</li>
+			<li>姓名</li>
+			<li>年级</li>
+			<li>班级</li>
+		</ul>
+		<ul class="student" ng-repeat="stu in stus| filter:query | orderBy:orderProp">
+			<li>{{stu.sid}}</li>
+			<li><a href="#/stu/{{stu.sid}}">{{stu.name}}</a></li>
+			<!--<li data-animation="am-fade-and-slide-top" data-template-url="#/stu/{{stu.sid}}" bs-modal="modal">{{stu.name}}</li>-->
+			<li>{{stu.grade}}</li>
+			<li>{{stu.class}}</li>
+		</ul>
+	</div>
+</div>
+<script>
+	/*$('#myModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget) // Button that triggered the modal
+		var recipient = button.data('stu') // Extract info from data-* attributes
+		// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		var modal = $(this)
+		modal.find('.modal-title').text('New message to ' + recipient)
+		modal.find('.modal-body input').val(recipient)
+	});*/
+</script>

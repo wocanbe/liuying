@@ -1,0 +1,1 @@
+uglifyjs lyScroll.js -o lyScroll.min.js -m -c

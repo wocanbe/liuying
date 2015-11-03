@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>元素排列示例</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript">
+(function($) {
+	$.fn.extend({
+		randomize: function() {
+			var $this = $(this);
+			var elems = $this.children();
+			elems.each(function(i) {
+				$(this).data("order", i);
+			}).sort(function() {
+				return (Math.round(Math.random()) - 0.5)
+			});
+			elems.detach();
+			$this.append(elems);
+			return $this;
+		},
+		orderBy:function(dataName,desc){
+			var $this = $(this);
+			var elems = $this.children();
+			for(var i=0;i<elems.length-1;i++){
+				var willOrder=i;
+				for(var m=willOrder+1;m<elems.length;m++){
+					var pOrder=parseInt($(elems[willOrder]).data(dataName)),
+						nOrder=parseInt($(elems[m]).data(dataName));
+					if(desc&&pOrder<nOrder)willOrder=m;//倒序排列
+					else if(pOrder>nOrder)willOrder=m;//正序排列
+				}
+				if(willOrder!=i){
+					var pp=$(elems[i]),pn=$(elems[willOrder]);
+					var n = pp.next(), p = pn.prev();
+					if((willOrder-i)==1){
+						pn.insertBefore(pp);
+					}else{
+						pn.insertBefore(n);
+						pp.insertAfter(p);
+					}
+					var tempEle=elems[i];
+					elems[i]=elems[willOrder];
+					elems[willOrder]=tempEle;
+				}
+			};
+			return $this;
+		}
+	});
+})(jQuery);
+var Array_util={
+	creatRomArr:function(i){
+        var arr=new Array();
+        for(var m=0;m<i;m++){
+            arr.push(m);
+        }
+        return this.romArr(arr);
+    },
+    romArr:function(arr){
+        function randomsort(a, b) {
+            return Math.random()>.5 ? -1 : 1;
+        }
+        return arr.sort(randomsort);
+    }
+}
+jQuery(function(){
+	console.log(Array_util.creatRomArr(8));
+	$("#main").randomize();
+	//$("#main").orderBy("order");
+	//$("#main").orderBy("a");
+	/*验证JS把那些看做假(false)
+	var temp;
+	if(temp)console.log("a");
+	temp="";
+	if(temp)console.log("b");
+	temp=0;
+	if(temp)console.log("c");
+	temp=null;
+	if(temp)console.log("d");
+	temp="0"
+	if(temp)console.log("e");
+	if(temp2)console.log("f")*/
+});
+</script>
+</head>
+
+<body>
+<ul id="main">
+	<li data-a="5">1</li>
+	<li data-a="4">2</li>
+	<li data-a="6">3</li>
+	<li data-a="3">4</li>
+	<li data-a="7">5</li>
+	<li data-a="2">6</li>
+	<li data-a="8">7</li>
+	<li data-a="1">8</li>
+</ul>
+</body>
+</html>

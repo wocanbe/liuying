@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>迷宫游戏</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/lyMaze.js"></script>
+<script type="text/javascript" src="data/maze_data.js"></script>
+<script language="javascript">
+function chMaze(i){
+	$("#main").lyMaze(data[i]);
+}
+$(function(){
+	$("#main").lyMaze(data1);
+})
+</script>
+<style>
+.ly_maze {background: #cfc;}
+.ly_maze * {margin:0;padding:0;}
+.ly_maze td {width:18px;height:18px;border: 1px solid #cfc;background: #cfc;}
+.ly_maze td.top{border-top: 1px solid #666;}
+.ly_maze td.right{border-right: 1px solid #666;}
+.ly_maze td.bottom{border-bottom: 1px solid #666;}
+.ly_maze td.left{border-left: 1px solid #666;}
+.ly_maze td.on {background:#f99;}
+.select {margin: 0 0 15px;}
+.select div {display:inline-block;width:50px;height:21px;border:1px solid #999;background-color:#eee;padding:0 4px;cursor:pointer;}
+</style>
+</head>
+
+<body>
+<div class="select">
+	选择迷宫：
+	<div onclick="chMaze(0)">迷宫一</div>
+	<div onclick="chMaze(1)">迷宫二</div>
+	<div onclick="chMaze(2)">迷宫三</div>
+	<div onclick="chMaze(3)">迷宫四</div>
+	<div onclick="chMaze(4)">迷宫五</div>
+</div>
+<div id="main"></div>
+</body>
+</html>

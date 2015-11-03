@@ -1,0 +1,6 @@
+﻿数据请求地址：lyCalendar.json
+lyCalendar.json?month=201509
+跳转页面地址：test.jsp
+test.jsp?date=20150915
+数据请求地址和跳转页面地址必须指定
+参数见上例

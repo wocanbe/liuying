@@ -1,0 +1,57 @@
+var initData = [{
+	"id":"1",
+	"name": "Hugo Pei",
+	"right": 4,
+	"total": 5,
+	"percent":80,
+	"description":"adsdasdsadad"
+}, {
+	"id":"2",
+	"name": "Youbing Sun",
+	"right": 2,
+	"total": 4,
+	"percent":50,
+	"description":"adsdasdsadad"
+}, {
+	"id":"3",
+	"name": "Tim Gifford",
+	"right": 5,
+	"total": 5,
+	"percent":100,
+	"description":"adsdasdsadad"
+}, {
+	"id":"4",
+	"name": "Laurie Harrison",
+	"right": 5,
+	"total": 6,
+	"percent":83,
+	"description":"adsdasdsadad"
+}, {
+	"id":"5",
+	"name": "Jo Sayers",
+	"right": 3,
+	"total": 5,
+	"percent":60,
+	"description":"adsdasdsadad"
+}, {
+	"id":"6",
+	"name": "Li Meng",
+	"right": 1,
+	"total": 2,
+	"percent":50,
+	"description":"adsdasdsadad"
+}, {
+	"id":"7",
+	"name": "Joanna Zhang",
+	"right": 3,
+	"total": 3,
+	"percent":100,
+	"description":"adsdasdsadad"
+}, {
+	"id":"8",
+	"name": "Abigail Bush",
+	"right": 4,
+	"total": 5,
+	"percent":83,
+	"description":"adsdasdsadad"
+}]

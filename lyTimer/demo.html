@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>时间插件示例</title>
+<link rel="stylesheet" href="lytimer.css"/>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ly-timer.min.js"></script>
+<script language="javascript">
+	$(function(){
+//		var _config={
+//			startTime:'08:00',
+//			endTime:'23:30',
+//			step:30,
+//			startLimit:'',
+//			endLimit:'',
+//			default:'08:00'
+//		};
+		$('#timer1').lyTimer({default:'09:00'});
+		$('#timer2').lyTimer({default:'12:00',startLimit:'#timer1'});
+	});
+</script>
+</head>
+
+<body>
+<div id="main">
+	开始时间：<input type="text" value="" name="timer1" id="timer1"/>
+	结束时间：<input type="text" value="" name="timer2" id="timer2"/>
+</div>
+</body>
+</html>

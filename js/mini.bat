@@ -1,0 +1,1 @@
+uglifyjs lyLife.js -o lyLife.min.js -m -c

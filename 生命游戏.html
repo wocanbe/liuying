@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>生命游戏</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/lyLife.js"></script>
+<script language="javascript">
+var lifeObj;
+$(function(){
+	lifeObj=$("#main").lyLife(20);
+	$("#confirm").click(function(){
+		lifeObj=$("#main").lyLife(parseInt($("#life_size").val()));
+	});
+	$("#start").click(function(){
+		if(!$(this).hasClass("disable")){
+			$(this).addClass("disable");
+			$("#stop").removeClass("disable");
+			lifeObj.start();
+		}
+	});
+	$("#stop").click(function(){
+		if(!$(this).hasClass("disable")){
+			$(this).addClass("disable");
+			$("#start").removeClass("disable");
+			lifeObj.stop();
+		}
+	});
+})
+</script>
+<style>
+.ly_life {background: #cfc;}
+.ly_life * {margin:0;padding:0;}
+.ly_life td {width:18px;height:18px;border: 1px solid #666;background: #cfc;}
+.ly_life td.on {background:#f99;}
+.select {margin: 0 0 15px;}
+.select input {width:30px;}
+.select div {display:inline-block;width:50px;height:21px;border:1px solid #999;background-color:#eee;padding:0 4px;cursor:pointer;text-align:center;}
+.select div.disable {color:#999;}
+</style>
+</head>
+
+<body>
+<div class="select">
+	说明：<br/>
+	1． 本游戏的趣味就是观察图形变化规律及最后形成的图形<br/>
+	2． 如果一个细胞周围有3个细胞为生（一个细胞周围共有8个细胞），则该细胞为生（即该细胞若原先为死，则转为生，若原先为生，则保持不变） 。<br/>
+	3． 如果一个细胞周围有2个细胞为生，则该细胞的生死状态保持不变；<br/>
+	4． 在其它情况下，该细胞为死（即该细胞若原先为生，则转为死，若原先为死，则保持不变）。<br/>
+	<!--1． 本游戏的玩法是在图中填入任意个格子，然后点击开始，游戏将自动计算。玩家可以随时/去除添加机器人，方法是点击格子。<br/>
+	2.  本游戏的规律是一个位置周围8个位置有三个机器人时，周围三个机器人将在本位置制造一个新的机器人；若周围机器人少于2个，该位置机器人将孤单死；若周围机器人多于3个，该位置机器人将被杀死。</br>
+	3.  本游戏是趣味类游戏，不喜勿喷。-->
+	地图大小：<input name="life_size" id="life_size" type="text" value="20">
+	<div id="confirm">确认</div>
+	<div id="start">开始</div>
+	<div id="stop" class="disable">暂停</div>
+</div>
+<div id="main"></div>
+</body>
+</html>
+<!-- 一将功成万骨枯，浮生一梦转头空。
+人生一世不满百，休负了大好时光。 -->

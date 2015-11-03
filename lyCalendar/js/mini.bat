@@ -1,0 +1,1 @@
+uglifyjs lyCalendar.js -o jquery.lyCalendar.min.js -m -c

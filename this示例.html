@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>this示例</title>
+<script language="javascript">
+var a=function(para,fun){
+	return fun(para+5)
+};
+var b={
+	para:7,
+	fun:function(){
+		var c=function(m){
+			return this.para*m
+		}
+		return a(5,c.bind(this));
+	}
+}
+alert(b.fun());
+/*
+结果：70。
+上面的代码强制把c方法的运行环境从全局域改为b域。
+本质上,函数类型的变量是指向这个函数实体的一个引用,在引用之间赋值不会对对象产生复制行为。我们可以通过函数的任何一个引用调用这个函数,不同之处仅仅在于上下文。
+变量的作用域是定义时决定的,而不是调用时决定的。
+*/
+</script>
+</head>
+
+<body>
+<div id="main"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <script src="../js/angular.js"></script>
+    <title>angular例子</title>
+</head>
+<body>
+<div ng-controller="">
+    Quest 1:Although a number of investigators <b>suspected</b> that all varieties descend from Felis silvestris, the wildcat, they could not be certain.
+    <hr>
+    <input type="radio" name="quest_1" ng-model="quest_1.answer" id="quest_1_1" value="A"/>
+    <label for="quest_1_1">They were very sure it was true.</label><br/>
+    <input type="radio" name="quest_1" ng-model="quest_1.answer" id="quest_1_2" value="B"/>
+    <label for="quest_1_2">They thought it might be true.</label><br/>
+    <input type="radio" name="quest_1" ng-model="quest_1.answer" id="quest_1_3" value="C"/>
+    <label for="quest_1_3">They were very sure it was false.</label><br/>
+    you has choiced {{quest_1.answer || 'empty'}}!
+</div>
+</body>
+</html>

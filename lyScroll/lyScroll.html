@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="lyScroll.js"></script>
+<style>
+body {background-color: red;}
+</style>
+<script language="javascript">
+$(function(){
+	var sucessBack=function(json){
+		var ele=$('<div class="class1" style="display:none">'+JSON.stringify(json)+'</div>');
+		$('#demos').append(ele);
+		ele.fadeIn(500);
+	}
+	$('#demos').lyScroll('lyScroll.json',4,sucessBack);
+});
+</script>
+<style>
+.class0 {height: 800px; line-height: 800px; margin-bottom: 100px; background-color: #fff;}
+.class1 {height: 300px; line-height: 300px; margin-bottom: 100px; background-color: #fff;clear: both;}
+</style>
+</head>
+<body>
+<div class="class0">aaa</div>
+<div id="demos">
+	<div class="class1">0</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>demo</title>
+</head>
+<body>
+<div id="jisuan1" ng-app="my_app">
+    <div ng-controller="jijia">
+        单价：<input type="text" pattern="\d+\.\d{2}" ng-model="danjia" />
+        数量：<input type="number" min="0" ng-model="shuliang" />
+        总价：{{danjia*shuliang|currency:'￥'}}
+    </div>
+</div>
+<div id="change">更换算法</div>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/angular.js"></script>
+<script>
+    function jijia($scope){
+        $scope.danjia='1.00';
+        $scope.shuliang=1;
+    }
+    var my_app=angular.module('my_app',[]);
+$("#change").click(function(){
+    var jisuanHtml='<div ng-controller="jijia">总价：<input type="text" pattern="\\d+\\.\\d{2}" ng-model="danjia" />';
+    jisuanHtml+='折扣：<input type="text" pattern="\\d+\\.\\d{2}" ng-model="shuliang" />'
+    jisuanHtml+='现价：{{danjia-shuliang|currency:\'￥\'}}</div>';
+    $("#jisuan1").html(jisuanHtml);
+});
+</script>
+</body>
+</html>
