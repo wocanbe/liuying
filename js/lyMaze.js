@@ -32,6 +32,7 @@
 					}
 				});
 			}
+			return isSupportTouch;
 		},
 		lyMaze: function(data) {
 			var $this = $(this).empty();
@@ -68,7 +69,7 @@
 			window.mazeLocalEle=tds.eq(0);
 			window.mazeStep=0;
 			window.mazeOver=false;
-			$this.unbind().touchEvent(
+			var isTouch=$this.unbind().touchEvent(
 				function(eventType){
 					if(mazeOver)return;
 					if(eventType=="up"){
@@ -106,7 +107,7 @@
 					}
 				}
 			);
-			$(window).unbind().keyup(function(e){
+			if(!isTouch)$(window).unbind().keyup(function(e){
 				if(mazeOver)return;
 				if(e.keyCode==38){//上箭头
 					if(data.data[mazeLocal[1]*_w+mazeLocal[0]][2]==1){
